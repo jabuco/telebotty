@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "dbaeumer.jshint",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.typescript-javascript-grammar",
+        "humao.rest-client",
+        "MattiasPernhult.vscode-todo"
+    ]
+}

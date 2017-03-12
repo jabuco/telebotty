@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+            "type": "node",
+            "request": "launch",
+            "name": "Launch",
+            "program": "${workspaceRoot}\\server.js",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "node",
+            "env": {
+                "DEBUG": "false"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "restart": true,
+            "name": "Debug",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/nodemon",
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/nodemon.cmd"
+            },
+            "args": [
+                "server.js"
+            ],
+            "env": {
+                "DEBUG": "true"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Tests",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha",
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha.cmd"
+            },
+            "runtimeArgs": [
+                "-u",
+                "tdd",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceRoot}/test"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "DEBUG": "false"
+            }
+        }
+    ]
+}

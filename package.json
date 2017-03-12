@@ -1,0 +1,42 @@
+{
+    "name": "telebot",
+    "version": "1.1.0",
+    "description": "telegram bot which listens to several requests of seedbox",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "npm test",
+        "test": "./node_modules/.bin/mocha"
+    },
+    "author": "bricksoft",
+    "license": "GPL3",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bricksoft/telebotty-node"
+    },
+    "dependencies": {
+        "assert": "^1.4.1",
+        "chai": "^3.5.0",
+        "chai-http": "^3.0.0",
+        "express": "^4.14.1",
+        "fs": "0.0.1-security",
+        "glob": "^7.1.1",
+        "irc": "^0.5.2",
+        "mocha": "^3.2.0",
+        "mongoose": "^4.8.1",
+        "socket.io": "^1.7.2",
+        "tgfancy": "^0.8.0"
+    },
+    "devDependencies": {
+        "mocha-logger": "^1.0.5",
+        "nodemon": "^1.11.0"
+    },
+    "jshintConfig": {
+        "esversion": 6
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "ecmaVersion": 6
+        }
+    }
+}

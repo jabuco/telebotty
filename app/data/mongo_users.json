@@ -1,0 +1,12 @@
+{
+    "_id": ObjectId("589df3dca7381eda63d354f3"),
+    "name": "Bot",
+    "reg": 0,
+    "email": "support@bricksoft.de"
+} {
+    "_id": ObjectId("589dfadfa7381eda63d3570e"),
+    "reg": 328601286,
+    "__v": 0,
+    "name": "jayjaynomnom",
+    "by": ObjectId("589df3dca7381eda63d354f3")
+}

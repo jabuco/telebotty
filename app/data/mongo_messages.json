@@ -1,0 +1,7 @@
+{
+    "_id": ObjectId("58c445d39653013740a1f99e"),
+    "by": ObjectId("589dfadfa7381eda63d3570e"),
+    "rcpt": ObjectId("589df3dca7381eda63d354f3"),
+    "text": "TESTMESSAGE",
+    "__v": 0
+}

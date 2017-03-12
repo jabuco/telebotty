@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>telebotty demo api usage</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/jquery-wp-content/themes/jqueryui.com/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div id="accordion">
+    </div>
+    <script>
+        var socket = io();
+        $(function() {
+            function update(data) {
+                $("#accordion").accordion();
+                $("#accordion").accordion("destroy");
+                $("#accordion").empty();
+
+                for (var i = 0; i < data.length; i++) {
+                    $("#accordion").append('<h3>Message by ' + data[i].by.name + '</h3><div>' + data[i].text + '</div>');
+                }
+                $("#accordion").accordion({
+                    "active": -1
+                });
+            }
+
+            function requestJSON(callback) {
+                console.log("requesting new messages using ajax (try #1)");
+                $.getJSON('/messages', function(data) {
+                    callback(data);
+                }).fail(function(xhr, status, err) {
+                    callback();
+                });
+            }
+
+            function requestSOCKET() {
+                console.log("requesting new messages using socket (try#2)");
+                socket.emit('getData', 'messages');
+            }
+
+            function request() {
+                console.log("requesting new messages from server")
+                requestJSON(function(data) {
+                    if (data) {
+                        update(data.res);
+                    } else {
+                        requestSOCKET();
+                    }
+                });
+            }
+
+            socket.on('messages', function(data) {
+                if (data.action == 'refresh') {
+                    console.log("server polls update request (source: " + data.reason + ")")
+                    request();
+                }
+            });
+            socket.on('getData', function(data) {
+                console.log("receiving new messages using socket")
+                if (data.error != null) {
+                    update(data.res);
+                }
+            });
+
+            request();
+        });
+    </script>
+</body>
+
+</html>
