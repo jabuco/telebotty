@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/bricksoft/telebotty.png?label=ready&title=Ready)](https://waffle.io/bricksoft/telebotty)
+[![Stories in Ready](https://badge.waffle.io/bricksoft/telebotty.png?label=ready&title=Ready)](https://waffle.io/bricksoft/telebotty)
 # telebotty [![Build Status](https://travis-ci.org/bricksoft/telebotty.svg?branch=master)](https://travis-ci.org/bricksoft/telebotty)
 
 A framework based on Express, Mongoose, Telegram and Irc.
