@@ -33,13 +33,23 @@ describe('Settings', () => {
  * also it needs to set settings.secrets as TRUE,
  * if it is set to false you should preceeding secrets.js checks
  * 
+ * IF process.env.NONPR is defined we're running a non-PR
+ * ELSE this is a PR an TELEGRAM_TOKEN won't be available 
+ * 
  */
-describe('Telegram', () => {
-    describe('token', () => {
-        it('should be accepted', done => telegram(done))
-            .timeout(6000);
+    describe('Telegram', () => {
+        describe('token', () => {
+            it('should be accepted', done => telegram(r => {
+                if(process.env.NONPR == 'telebotty_test_value') {
+                    done(r);
+                } else {
+                    require('mocha-logger').log('secret environment variables are not set! result might be inaccurate.');
+                    done();
+                }
+            }))
+                .timeout(6000);
+        });
     });
-});
 
 describe('Database', () => {
     describe('#connect()', () => {
