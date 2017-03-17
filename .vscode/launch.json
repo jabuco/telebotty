@@ -50,7 +50,9 @@
             ],
             "internalConsoleOptions": "openOnSessionStart",
             "env": {
-                "DEBUG": "false"
+                "DEBUG": "false",
+                "TEST": "true",
+                "NONPR": "telebotty_test_value"
             }
         }
     ]

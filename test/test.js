@@ -2,6 +2,7 @@ var assert = require('assert'),
     utils = require('../app/app/utils'),
     path = require('path'),
     exec = require('child_process').exec,
+    mlog = require('mocha-logger'),
 
     settings = require('./settings'),
     telegram = require('./telegram'),
@@ -37,19 +38,19 @@ describe('Settings', () => {
  * ELSE this is a PR an TELEGRAM_TOKEN won't be available 
  * 
  */
-    describe('Telegram', () => {
-        describe('token', () => {
-            it('should be accepted', done => telegram(r => {
-                if(process.env.NONPR == 'telebotty_test_value') {
+describe('Telegram', () => {
+    describe('token', () => {
+        it('should be accepted', done => telegram(r => {
+                if (process.env.NONPR == 'telebotty_test_value') {
                     done(r);
                 } else {
-                    require('mocha-logger').log('secret environment variables are not set! result might be inaccurate.');
+                    mlog.log('secret environment variables are not set! result might be inaccurate.');
                     done();
                 }
             }))
-                .timeout(6000);
-        });
+            .timeout(6000);
     });
+});
 
 describe('Database', () => {
     describe('#connect()', () => {
