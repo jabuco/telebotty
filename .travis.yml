@@ -15,4 +15,4 @@ addons:
 before_script:
   - sleep 15
 script:
-  - npm test-coverage
+  - npm run test-coverage
