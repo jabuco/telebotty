@@ -16,3 +16,4 @@ before_script:
   - sleep 15
 script:
   - npm run test-coverage
+  - npm test
