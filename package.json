@@ -33,6 +33,10 @@
         "mocha-logger": "^1.0.5",
         "nodemon": "^1.11.0"
     },
+    "blanket": {
+        "pattern": [ "" ],
+        "data-cover-never": [ ".vscode", "cloc", "node_modules", "test", "tests"]
+      }
     "jshintConfig": {
         "esversion": 6
     },
