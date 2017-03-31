@@ -1,6 +1,7 @@
 # telebotty [![Stories in Ready](https://badge.waffle.io/bricksoft/telebotty.png?label=ready&title=Ready)](https://waffle.io/bricksoft/telebotty) [![Build Status](https://travis-ci.org/bricksoft/telebotty.svg?branch=master)](https://travis-ci.org/bricksoft/telebotty) [![Coverage Status](https://coveralls.io/repos/github/bricksoft/telebotty/badge.svg?branch=master)](https://coveralls.io/github/bricksoft/telebotty?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/bricksoft/telebotty/badge.svg)](https://snyk.io/test/github/bricksoft/telebotty)
 
 [![Gitter](https://badges.gitter.im/bricksoft/telebotty.svg)](https://gitter.im/bricksoft/telebotty?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 A framework based on Express, Mongoose, Telegram and Irc.
 
 Joining 4 worlds in 1 smart way.
