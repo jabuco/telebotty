@@ -37,7 +37,7 @@
     "blanket": {
         "pattern": [ "" ],
         "data-cover-never": [ ".vscode", "cloc", "node_modules", "test", "tests"]
-      }
+    },
     "jshintConfig": {
         "esversion": 6
     },
