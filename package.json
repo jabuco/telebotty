@@ -4,7 +4,8 @@
     "description": "telegram bot which listens to several requests of seedbox",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/.bin/mocha"
+        "test": "./node_modules/.bin/mocha",
+        "coverage": "NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
     },
     "author": "bricksoft",
     "license": "GPL3",
