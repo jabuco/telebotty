@@ -1,7 +1,7 @@
 # telebotty 
 [![Stories in Ready](https://badge.waffle.io/bricksoft/telebotty.png?label=ready&title=Ready)](https://waffle.io/bricksoft/telebotty) 
 [![Build Status](https://travis-ci.org/bricksoft/telebotty.svg?branch=master)](https://travis-ci.org/bricksoft/telebotty) 
-[![Build status](https://ci.appveyor.com/api/projects/status/aat3mr6340qo7chs/branch/master?svg=true)](https://ci.appveyor.com/project/jay-bricksoft/telebotty/branch/master) 
+[![Build status](https://ci.appveyor.com/api/projects/status/aat3mr6340qo7chs/branch/build?svg=true)](https://ci.appveyor.com/project/jay-bricksoft/telebotty/branch/build) 
 [![Coverage Status](https://coveralls.io/repos/github/bricksoft/telebotty/badge.svg?branch=master)](https://coveralls.io/github/bricksoft/telebotty?branch=master) 
 [![Known Vulnerabilities](https://snyk.io/test/github/bricksoft/telebotty/badge.svg)](https://snyk.io/test/github/bricksoft/telebotty) 
 [![GetBadges Game](https://bricksoft-telebotty.getbadges.io/shield/company/bricksoft-telebotty)](https://bricksoft-telebotty.getbadges.io/?ref=shield-game)
