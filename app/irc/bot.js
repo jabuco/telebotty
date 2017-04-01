@@ -18,10 +18,12 @@ function Irc(database, web, settings, options, test) {
         Listeners = require('./bot_listeners.js'),
         bot = new irc.Client(settings.irc.server, settings.irc.nick, options);
 
+
     if (!test) {
         Commands(database, web, settings, bot);
         Listeners(database, web, settings, bot);
     } else {
+        bot.addListener('error', e => console.log('[IRC]', e));
         bot.connect(bot.disconnect(test));
     }
     bot.connect(() => {

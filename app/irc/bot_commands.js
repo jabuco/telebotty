@@ -10,8 +10,8 @@ function Commands(database, web, settings, bot) {
     function addCommand(instance, delim, trigger, callback) {
         instance.addListener('message', function(from, to, message) {
             callback = callback || function() {};
-            if (message.startsWith(delim + trigger + ' ')) {
-                callback(from, to, message.popFirst(' '));
+            if (message.startsWith(delim + trigger)) {
+                callback(from, to, message.popFirst(delim + trigger));
             }
         });
     }
@@ -19,8 +19,8 @@ function Commands(database, web, settings, bot) {
     function addPrivateCommand(instance, delim, trigger, callback) {
         instance.addListener('pm', function(from, to, message) {
             callback = callback || function() {};
-            if (message.startsWith(delim + trigger + ' ')) {
-                callback(from, to, message.popFirst(' '));
+            if (message.startsWith(delim + trigger)) {
+                callback(from, to, message.popFirst(delim + trigger));
             }
         });
     }

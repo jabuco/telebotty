@@ -41,6 +41,13 @@ var Settings = {
         })(),
         server: process.env.IRC_SERVER || '0.0.0.0',
         nick: 'telebotty',
+        auth: {
+            provider: 'nickserv',
+            command: 'identify',
+            user: 'telebotty',
+            secret: '',
+            commandFormat: 'c %u %s'
+        },
         options: {
             autoConnect: false,
             autoRejoin: true,

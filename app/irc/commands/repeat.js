@@ -9,7 +9,7 @@
  */
 function repeat(database, web, settings, bot) {
     return function repeat(from, to, data) {
-        bot.say(to, `${from} hat '${data} gesagt! hihi :>'`);
+        bot.say(to, `${from} hat '${data}' gesagt! hihi :>`);
     };
 }
 
