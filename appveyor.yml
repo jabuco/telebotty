@@ -22,5 +22,15 @@ test_script:
   # run tests
   - npm test
 
-# Don't actually build.
-build: off
+# create Release.zip  
+deploy:
+  release: telebotty-v$(appveyor_build_version)_prepacked
+  description: 'Automated build with dependencies'
+  provider: GitHub
+  auth_token:
+    secure: 3my9FfR2QvtR6OTyAOJIKAU6Bq59wHG4znFHSG2xdOWFrEQF7S7kKtmWXkh14IbG
+  artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
+  draft: false
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
