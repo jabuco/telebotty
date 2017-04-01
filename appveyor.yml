@@ -9,7 +9,6 @@ services:
 # Install scripts. (runs after repo cloning)
 install:
   # Install MongoDb server
-  - dir C:\mongodb\bin
   - set PATH=%PATH%;C:\mongodb\bin
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
