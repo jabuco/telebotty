@@ -29,7 +29,6 @@ deploy:
   provider: GitHub
   auth_token:
     secure: 3my9FfR2QvtR6OTyAOJIKAU6Bq59wHG4znFHSG2xdOWFrEQF7S7kKtmWXkh14IbG
-  artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
   draft: false
   prerelease: false
   on:
