@@ -2,7 +2,6 @@
 environment:
   nodejs_version: "6"
   DEBUG: "true"
-  TEST: "true"
 # Require mongodb service
 services:
   - mongodb
