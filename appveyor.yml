@@ -3,12 +3,13 @@ environment:
   nodejs_version: "6"
   DEBUG: "true"
   TEST: "true"
-  mongoimport: "temp\\mongo\\mongoimport.exe"
-
+# Require mongodb service
+services:
+  - mongodb
 # Install scripts. (runs after repo cloning)
 install:
   # Install MongoDb server
-  - ps: ./appveyor_mongodb.ps1
+  # - ps: ./appveyor_mongodb.ps1
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
   # install modules
