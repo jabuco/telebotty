@@ -30,7 +30,7 @@ deploy:
   description: 'Automated build with dependencies'
   provider: GitHub
   auth_token:
-    secure: 3my9FfR2QvtR6OTyAOJIKAU6Bq59wHG4znFHSG2xdOWFrEQF7S7kKtmWXkh14IbG
+    secure: 5+Kn0lMBHAgctK6JlkC+pPSteugVXMKXvoxuk1P+0P/y0CVbPX1T7CF9XBIO78to
   draft: false
   prerelease: false
   on:
