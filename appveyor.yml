@@ -2,7 +2,8 @@
 environment:
   nodejs_version: "6"
   DEBUG: "true"
-  TEST: "true"
+  TEST: "true",
+  mongoimport: "temp\mongo\mongoimport.exe"
 
 # Install scripts. (runs after repo cloning)
 install:
