@@ -24,6 +24,11 @@ Start-Sleep -Seconds 5
 # Start mongodb service
 net start mongodb
 
+# create mongoimport link
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut(".\monogimport.lnk")
+$Shortcut.TargetPath = "$env:temp\mongoimport.exe"
+$Shortcut.Save()
 # Return to last location, to run the build
 Pop-Location
 
