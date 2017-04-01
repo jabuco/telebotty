@@ -124,6 +124,7 @@ try {
 } catch (error) {
     if ((process.env.DEBUG + '').toLowerCase() == 'true' || (process.env.TEST + '').toLowerCase() == 'true') {
         console.warn('/app/app/secrets.js is either missing or courrupt. please run Tests.')
+        console.log(error.message)
     }
 }
 
