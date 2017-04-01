@@ -1,8 +1,8 @@
 # Test against the latest version of this Node.js version
 environment:
   nodejs_version: "6"
-  DEBUG: "true",
-  TEST: "true",
+  DEBUG: "true"
+  TEST: "true"
   mongoimport: "temp\\mongo\\mongoimport.exe"
 
 # Install scripts. (runs after repo cloning)
