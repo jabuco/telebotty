@@ -29,8 +29,8 @@ Clear-Host
 $AddedLocation ="$env:temp\mongo\"
 $Reg = "Registry::HKLM\System\CurrentControlSet\Control\Session Manager\Environment"
 $OldPath = (Get-ItemProperty -Path "$Reg" -Name PATH).Path
-$NewPath= $OldPath + ';' + $AddedLocation
-Set-ItemProperty -Path "$Reg" -Name PATH –Value $NewPath
+$NewPath = $OldPath + ';' + $AddedLocation
+Set-ItemProperty -Path "$Reg" -Name PATH -Value $NewPath
 # Return to last location, to run the build
 Pop-Location
 
