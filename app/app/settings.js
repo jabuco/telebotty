@@ -5,20 +5,20 @@ var Settings = {
     database: {
         debug: false || (() => {
             try {
-                return ((process.env.DEBUG + "").toLowerCase() == 'true');
+                return ((process.env.DEBUG + '').toLowerCase() == 'true')
             } catch (e) {
-                return false;
+                return false
             }
         })(),
         name: process.env.DB_PATH || 'telebotty',
         ip: process.env.DB_IP || '127.0.0.1',
         port: process.env.DB_PORT || 27017,
         get url() {
-            return `mongodb://${this.ip}:${this.port}/${this.name}`;
+            return `mongodb://${this.ip}:${this.port}/${this.name}`
         },
         options: {
             auth: {
-                authdb: "admin"
+                authdb: 'admin'
             },
             // mongos: undefined,
             // db: undefined,
@@ -26,7 +26,7 @@ var Settings = {
             pass: process.env.DB_PASS || undefined,
             // replset: undefined,
             // server: undefined,
-            user: process.env.DB_USER || undefined,
+            user: process.env.DB_USER || undefined
         },
         Promise: global.Promise
     },
@@ -34,9 +34,9 @@ var Settings = {
         commandDelimiter: '_',
         debug: false || (() => {
             try {
-                return ((process.env.DEBUG + "").toLowerCase() == 'true');
+                return ((process.env.DEBUG + '').toLowerCase() == 'true')
             } catch (e) {
-                return false;
+                return false
             }
         })(),
         server: process.env.IRC_SERVER || '0.0.0.0',
@@ -61,9 +61,9 @@ var Settings = {
     telegram: {
         debug: false || (() => {
             try {
-                return ((process.env.DEBUG + "").toLowerCase() == 'true');
+                return ((process.env.DEBUG + '').toLowerCase() == 'true')
             } catch (e) {
-                return false;
+                return false
             }
         })(),
         token: process.env.TELEGRAM_TOKEN,
@@ -74,9 +74,9 @@ var Settings = {
     web: {
         debug: false || (() => {
             try {
-                return ((process.env.DEBUG + "").toLowerCase() == 'true');
+                return ((process.env.DEBUG + '').toLowerCase() == 'true')
             } catch (e) {
-                return false;
+                return false
             }
         })(),
         port: process.env.WEB_PORT || 8080,
@@ -102,7 +102,7 @@ var Settings = {
             'x-powered-by': false
         }
     }
-};
+}
 
 /**
  *  apply secrets to settings. 
@@ -113,14 +113,17 @@ var Settings = {
  **/
 try {
     if ((process.env.TEST + '').toLowerCase() == 'true') {
-        require('./test')(Settings);
+        if ((process.env.DEBUG + '').toLowerCase() == 'true') {
+            console.log('[Settings]', 'loading test-settings')
+        }
+        require('./test')(Settings)
     } else {
-        require('./secrets')(Settings);
+        require('./secrets')(Settings)
     }
-    Settings.secrets = true;
+    Settings.secrets = true
 } catch (error) {
     if ((process.env.DEBUG + '').toLowerCase() == 'true' || (process.env.TEST + '').toLowerCase() == 'true') {
-        console.warn('/app/app/secrets.js is either missing or courrupt. please run Tests.');
+        console.warn('/app/app/secrets.js is either missing or courrupt. please run Tests.')
     }
 }
 
@@ -132,10 +135,10 @@ try {
  * 
  **/
 try {
-    require('./globals')(Settings.globals);
+    require('./globals')(Settings.globals)
 } catch (error) {
     if ((process.env.DEBUG + '').toLowerCase() == 'true') {
-        console.warn('/app/app/globals.js is either missing or courrupt. please run Tests.');
+        console.warn('/app/app/globals.js is either missing or courrupt. please run Tests.')
     }
 }
-module.exports = Settings;
+module.exports = Settings
