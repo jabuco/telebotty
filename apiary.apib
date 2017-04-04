@@ -1,0 +1,103 @@
+FORMAT: 1A
+HOST: http://telebotty-live.herokuapp.com/
+
+# Telebotty API
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Message Collection [/messages]
+
+### List All Messages [GET]
+
++ Response 200 (application/json)
+
+        {
+            "error": null,
+            "res": [
+                {
+                    "_id": "58c445d39653013740a1f99e",
+                    "by": {
+                        "_id": "589dfadfa7381eda63d3570e",
+                        "reg": 328601286,
+                        "__v": 0,
+                        "name": "jayjaynomnom",
+                        "by": "589df3dca7381eda63d354f3"
+                    },
+                    "rcpt": {
+                        "_id": "589df3dca7381eda63d354f3",
+                        "name": "Bot",
+                        "reg": 0,
+                        "email": "support@bricksoft.de"
+                    },
+                    "text": "TESTMESSAGE",
+                    "__v": 0
+                }
+            ]
+        }
+   
+### Show Message by ID [GET /messages/58c445d39653013740a1f99e] 
+
++ Response 200 (application/json)
+
+        {
+            "error": null,
+            "res": [
+                {
+                    "_id": "58c445d39653013740a1f99e",
+                    "by": {
+                        "_id": "589dfadfa7381eda63d3570e",
+                        "reg": 328601286,
+                        "__v": 0,
+                        "name": "jayjaynomnom",
+                        "by": "589df3dca7381eda63d354f3"
+                    },
+                    "rcpt": {
+                        "_id": "589df3dca7381eda63d354f3",
+                        "name": "Bot",
+                        "reg": 0,
+                        "email": "support@bricksoft.de"
+                    },
+                    "text": "TESTMESSAGE",
+                    "__v": 0
+                }
+            ]
+        }
+
+
+## Notification Collection [/notify]
+
+### Create a new Notification [POST]
+
++ Response 200 (application/json)
+
+        {
+            "_id": "58e2ff54037ef10011ba580a",
+            "reason": "API",
+            "action": "refresh",
+            "ts": "2017-04-04T02:05:08.012Z",
+            "__v": 0,
+            "createdAt": "2017-04-04T02:05:08.016Z"
+        }
+
+### List All Notifications [GET /notify/list]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id": "58e2ff54037ef10011ba580a",
+                "reason": "API",
+                "action": "refresh",
+                "ts": "2017-04-04T02:05:08.012Z",
+                "__v": 0,
+                "createdAt": "2017-04-04T02:05:08.016Z"
+            },
+            {
+                "_id": "58e2ff81037ef10011ba580b",
+                "reason": "API",
+                "action": "refresh",
+                "ts": "2017-04-04T02:05:53.729Z",
+                "__v": 0,
+                "createdAt": "2017-04-04T02:05:53.730Z"
+            }
+        ]
