@@ -44,3 +44,4 @@ The documentation for this section is comming soon!
 ### web
 
 The documentation for this section is comming soon!
+For now you can browse our API documentaion on APIary: http://docs.telebotty.apiary.io/
