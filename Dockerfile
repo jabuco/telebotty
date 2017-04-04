@@ -3,10 +3,12 @@ FROM node:latest
 ENV APP_HOME /telebotty
 ENV NODE_ENV production
 ENV NPM_CONFIG_LOGLEVEL warn
-VOLUME $APP_HOME
+
+RUN npm install
+
 ADD . $APP_HOME
 WORKDIR $APP_HOME
 
 EXPOSE 80 443 8080 3000 21707 6667 6697 7000
 
-CMD npm install
+CMD npm start
