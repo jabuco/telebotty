@@ -3,8 +3,7 @@ FROM node:latest
 ENV APP_HOME /telebotty
 ENV NODE_ENV production
 ENV NPM_CONFIG_LOGLEVEL warn
-
-RUN mkdir -p $APP_HOME
+VOLUME $PP_HOME
 ADD . $APP_HOME
 WORKDIR $APP_HOME
 
