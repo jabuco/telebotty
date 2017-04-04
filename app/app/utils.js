@@ -20,8 +20,10 @@ function Utils() {
             var modules = {}; //,args = Array.prototype.slice.call(arguments, 1);
 
             require('fs').readdirSync(dir).forEach((file) => {
-                var index = file.split('.')[0].capitalize();
-                modules[index] = require(dir + Path.sep + file);
+                if (!file.startsWith('.')) {
+                    var index = file.split('.')[0].capitalize();
+                    modules[index] = require(dir + Path.sep + file);
+                }
             });
             return modules;
         }
