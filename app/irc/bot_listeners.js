@@ -9,13 +9,15 @@
 function Listeners(database, web, settings, bot) {
     var Path = require('path'),
         path = Path.join(__dirname, 'listeners'),
-        utils = require('../app/utils');
+        pathUser = Path.join(__dirname, '../../config/app/irc/listeners'),
+        utils = require('../app/utils'),
+        listeners = {};
 
     if (database === null && settings.irc) {
         console.log('[IRC] Listeners', 'no database present. this could lead to errors if bot needs to access to a database.');
     }
     // load all Listeners
-    var listeners = utils.requireDir(path);
+    Object.assign(listeners, utils.requireDir(path), utils.requireDir(pathUser));
     for (var i in listeners) {
         listeners[i](database, web, settings, bot);
     }

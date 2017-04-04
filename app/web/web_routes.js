@@ -10,13 +10,14 @@
 function Routes(database, settings, express, sockets) {
     var Path = require('path'),
         path = Path.join(__dirname, 'routes'),
-        utils = require('../app/utils');
+        pathUser = Path.join(__dirname, '../../', '/config/app/web/routes'),
+        utils = require('../app/utils'),
+        routes = {};
 
-    var routes = utils.requireDir(path);
+    Object.assign(routes, utils.requireDir(path), utils.requireDir(pathUser));
     for (var i in routes) {
         routes[i](database, settings, express, sockets);
     }
-
 
     if (settings.web.debug) {
         console.log('[Web]', 'all routes loaded.');

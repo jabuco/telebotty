@@ -9,13 +9,15 @@
 function Commands(database, web, settings, bot) {
     var Path = require('path'),
         path = Path.join(__dirname, 'commands'),
-        utils = require('../app/utils');
+        pathUser = Path.join(__dirname, '../../config/app/db/models'),
+        utils = require('../app/utils'),
+        commands = {};
 
     if (database === null && settings.telegram.debug) {
         console.log('[TG]', 'no database present. this could lead to errors if bot needs to access to a database.');
     }
     // load all commands
-    var commands = utils.requireDir(path);
+    Object.assign(commands, utils.requireDir(path), utils.requireDir(pathUser));
     for (var i in commands) {
         commands[i](database, web, settings, bot);
     }

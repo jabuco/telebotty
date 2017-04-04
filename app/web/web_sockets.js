@@ -11,12 +11,14 @@
 function Sockets(database, settings, server) {
     var Path = require('path'),
         path = Path.join(__dirname, 'sockets'),
+        pathUser = Path.join(__dirname, '../../config/app/web/sockets'),
         socket = require('socket.io')(server),
-        utils = require('../app/utils');
+        utils = require('../app/utils'),
+        socks = {};
 
     // load all socket listeners
     socket.on('connection', function(s) {
-        var socks = utils.requireDir(path);
+        Object.assign(socket, utils.requireDir(path), utils.requireDir(pathUser));
         for (var i in socks) {
             socks[i](database, s);
         }

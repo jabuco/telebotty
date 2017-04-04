@@ -7,10 +7,11 @@
 var Functions = function(database, settings) {
     var Path = require('path'),
         path = Path.join(__dirname, 'functions'),
+        pathUser = Path.join(__dirname, '../../config/app/db/functions'),
         functions = {},
         utils = require('../app/utils');
 
-    functions = utils.requireDir(path);
+    Object.assign(functions, utils.requireDir(path), utils.requireDir(pathUser));
     for (var i in functions) {
         functions[i] = functions[i](database);
     }

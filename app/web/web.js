@@ -30,6 +30,7 @@ function listen(server, settings, testcallback) {
 function Web(database, settings, testcallback) {
     var Express = require('express'),
         HTTP = require('http'),
+        Path = require('path'),
         Routes = require('./web_routes'),
         Settings = require('./web_settings'),
         Sockets = require('./web_sockets'),
@@ -51,6 +52,21 @@ function Web(database, settings, testcallback) {
 
     // setup express
     Settings(settings, express);
+    express.use(require('node-sass-middleware')({
+        src: Path.join(__dirname, '../../config/public/stylesheets'),
+        dest: Path.join(__dirname, '../../config/public/stylesheets'),
+        indentedSyntax: false,
+        includePaths: [
+            Path.join(__dirname, '../../node_modules'),
+            Path.join(__dirname, '../../demo/stylesheets')
+        ],
+        sourceMap: false
+    }));
+
+
+    // first try to serve static files
+    express.use('/', Express.static(Path.join(__dirname, '../../config/public')));
+    express.use('/', Express.static(Path.join(__dirname, '../../demo')));
 
     // setup Sockets
     sockets = Sockets(database, settings, server);

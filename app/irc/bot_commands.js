@@ -27,13 +27,15 @@ function Commands(database, web, settings, bot) {
 
     var Path = require('path'),
         path = Path.join(__dirname, 'commands'),
-        utils = require('../app/utils');
+        pathUser = Path.join(__dirname, '../../config/app/irc/commands'),
+        utils = require('../app/utils'),
+        commands = {};
 
     if (database === null && settings.irc) {
         console.log('[IRC] Commands', 'no database present. this could lead to errors if bot needs to access to a database.');
     }
     // load all commands
-    var commands = utils.requireDir(path);
+    Object.assign(commands, utils.requireDir(path), utils.requireDir(pathUser));
     for (var i in commands) {
         var cmd = commands[i](database, web, settings, bot);
         addCommand(bot, settings.irc.commandDelimiter, cmd.name, cmd);

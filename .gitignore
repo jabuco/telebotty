@@ -49,3 +49,6 @@ jspm_packages
 /app/app/secrets.js
 # ignore output of cloc since users can allways check on their own
 /cloc/output.cloc.txt
+# ignore compiled sass except vendor css
+/demo/stylesheets/*.css
+!/demo/stylesheets/*.min.css

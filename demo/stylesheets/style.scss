@@ -1,0 +1,21 @@
+// this import requires known lib folder (includePaths set to node_modules)
+//@import "material-components-web/material-components-web";
+//@import "material-design-lite/src/material-design-lite";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css";
+@import "material-kit";
+img.material-icons {
+    @extend i.material-icons;
+}
+
+
+/*
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    a {
+        color: #00B7FF;
+    }
+}
+*/
