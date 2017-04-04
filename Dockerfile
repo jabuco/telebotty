@@ -1,5 +1,5 @@
 FROM node:latest
-ENV APP_HOME /app		
+ENV APP_HOME /telebotty		
 VOLUME $APP_HOME
 ADD . $APP_HOME		
 WORKDIR $APP_HOME		
@@ -7,4 +7,4 @@ ENV NODE_ENV production
 ENV NPM_CONFIG_LOGLEVEL warn		
 RUN npm install		
 EXPOSE 80 443 8080 3000 21707 6667 6697 7000 		
-CMD npm start
+CMD npm test
