@@ -36,8 +36,18 @@ function Web(database, settings, testcallback) {
         Tools = require('./web_tools'),
         express = Express(),
         server = HTTP.createServer(express),
+        opbeat = require('opbeat'),
         sockets = {},
         tools = {};
+
+    // add this to the VERY top of the first file loaded in your app
+    if (process.env.OPBEAT_TOKEN != '') {
+        opbeat.start({
+            appId: 'defd81afde',
+            organizationId: 'ff8890035a8446b1b3e2b07416234eee',
+            secretToken: process.env.OPBEAT_TOKEN
+        });
+    }
 
     // setup express
     Settings(settings, express);
@@ -53,7 +63,7 @@ function Web(database, settings, testcallback) {
 
     // Add the Opbeat middleware after your regular middleware
     if (process.env.OPBEAT_TOKEN != '') {
-        app.use(opbeat.middleware.express());
+        express.use(opbeat.middleware.express());
     }
 
     if (testcallback) {
