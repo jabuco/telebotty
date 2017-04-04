@@ -1,7 +1,7 @@
 {
-    "name": "telebot",
-    "version": "1.2.0",
-    "description": "telegram bot which listens to several requests of seedbox",
+    "name": "telebotty",
+    "version": "1.2.1",
+    "description": "A universal framework utilising Express, Mongoose, Telegram, Irc and many more",
     "main": "server.js",
     "scripts": {
         "test": "./node_modules/.bin/mocha",
@@ -9,10 +9,10 @@
     },
     "author": "bricksoft",
     "license": "GPL3",
-    "private": true,
+    "private": false,
     "repository": {
         "type": "git",
-        "url": "https://github.com/bricksoft/telebotty-node"
+        "url": "https://github.com/bricksoft/telebotty"
     },
     "dependencies": {
         "assert": "^1.4.1",
@@ -50,7 +50,8 @@
             "cloc",
             "node_modules",
             "test",
-            "tests"
+            "tests",
+            "config"
         ]
     },
     "jshintConfig": {
