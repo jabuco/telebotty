@@ -5,8 +5,17 @@ var Utils = require('./app/app/utils'),
     Web = require('./app/web/web'),
     Database = require('./app/database/database');
 
+// add this to the VERY top of the first file loaded in your app
+if (process.env.OPBEAT_TOKEN != '') {
+    var opbeat = require('opbeat').start({
+        appId: 'defd81afde',
+        organizationId: 'ff8890035a8446b1b3e2b07416234eee',
+        secretToken: process.env.OPBEAT_TOKEN
+    });
+}
+
 // creating database instance
-console.log('[DB]', 'starting services...')
+console.log('[DB]', 'starting services...');
 var database = Database(settings);
 console.log('[DB]', 'database ready.');
 

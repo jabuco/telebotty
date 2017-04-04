@@ -51,6 +51,11 @@ function Web(database, settings, testcallback) {
     // setup tools
     tools = Tools(database, settings, HTTP, express);
 
+    // Add the Opbeat middleware after your regular middleware
+    if (process.env.OPBEAT_TOKEN != '') {
+        app.use(opbeat.middleware.express());
+    }
+
     if (testcallback) {
         listen(server, settings, testcallback);
     }
