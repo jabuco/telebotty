@@ -18,7 +18,7 @@ var Settings = {
         },
         options: {
             auth: {
-                authdb: 'admin'
+                authdb: process.env.DB_AUTHDB || 'admin'
             },
             // mongos: undefined,
             // db: undefined,
