@@ -15,6 +15,9 @@ services:
   - mongodb
 # Install scripts. (runs after repo cloning)
 install:
+  #setup correct build version
+  - ps: $env:package_version = (Get-Content -Raw -Path package.json | ConvertFrom-Json).version
+  - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
   # Install MongoDb server
   - set PATH=%PATH%;C:\mongodb\bin
   # Get the latest stable version of Node.js or io.js
