@@ -53,8 +53,8 @@ function Web(database, settings, testcallback) {
     // setup express
     Settings(settings, express);
     express.use(require('node-sass-middleware')({
-        src: Path.join(__dirname, '../../config/public/stylesheets'),
-        dest: Path.join(__dirname, '../../config/public/stylesheets'),
+        src: Path.join(__dirname, '../../config/public'),
+        dest: Path.join(__dirname, '../../config/public'),
         indentedSyntax: false,
         includePaths: [
             Path.join(__dirname, '../../node_modules'),

@@ -52,3 +52,5 @@ jspm_packages
 # ignore compiled sass except vendor css
 /demo/stylesheets/*.css
 !/demo/stylesheets/*.min.css
+/config/public/stylesheets/*.css
+!/config/public/stylesheets/*.min.css
