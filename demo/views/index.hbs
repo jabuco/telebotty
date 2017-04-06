@@ -19,26 +19,51 @@
 				<div class="title">
 					<h2>How it works</h2>
 				</div>
-
-				<div class="section section-basic">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="title">
-								<h3>Step 1 – Register</h3>
-							</div>
-
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="title">
+							<h3>Step 1 – Register</h3>
 						</div>
-						<div class="col-sm-3">
-							<div class="title">
-								<h3>Step 2 – Link</h3>
-							</div>
 
+					</div>
+					<div class="col-sm-3">
+						<div class="title">
+							<h3>Step 2 – Link</h3>
 						</div>
-						<div class="col-sm-3">
-							<div class="title">
-								<h3>Step 3 – Enjoy</h3>
-							</div>
 
+					</div>
+					<div class="col-sm-3">
+						<div class="title">
+							<h3>Step 3 – Enjoy</h3>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section-basic">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div>
+							<pre id="chat" style="overflow-x: auto; min-height: 45vh; max-height:45vh"></pre>
+							<div id="warning" class="alert alert-danger" role="alert" style="display:none">
+								<strong>Stop!</strong> First, please tell us a username you want (/nick <i>username</i>)
+							</div>
+							<div id="passwordnotice" class="alert alert-warning fade-out" role="alert" style="display:none">
+								<strong>Hey!</strong> Please don't tell your passwords to anyone, don't even to Support staffs!<br>
+								<small>you see this message because we detectd a word which sounds like "password" in your message</small>
+							</div>
+							<span role="form" id="formchat">
+								<div class="input-group">
+									<input type="text" id="sendtext" class="form-control" placeholder="Send a Message" required autocomplete="off">
+									<input type="hidden" id="username" value="user">
+									<span class="input-group-btn">
+										<input type="submit" id="send" class="btn btn-danger" value="Go!">
+									</span>
+							</span>
 						</div>
 					</div>
 				</div>
@@ -51,18 +76,18 @@
 				<ul>
 					<li>
 						<a href="https://bricksoft.de">
-							Bricksoft
-						</a>
+									Bricksoft
+								</a>
 					</li>
 					<li>
 						<a href="http://github.com/bricksoft/telebotty">
-							Github
-						</a>
+									Github
+								</a>
 					</li>
 					<li>
 						<a href="https://gitter.im/bricksoft/telebotty">
-						   Gitter Chat
-						</a>
+								Gitter Chat
+								</a>
 					</li>
 				</ul>
 			</nav>
