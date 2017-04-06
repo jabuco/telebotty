@@ -31,6 +31,9 @@ function Web(database, settings, testcallback) {
     var Express = require('express'),
         HTTP = require('http'),
         Path = require('path'),
+        Favicon = require('serve-favicon'),
+        BodyParser = require('body-parser'),
+        CookieParser = require('cookie-parser'),
         Routes = require('./web_routes'),
         Settings = require('./web_settings'),
         Sockets = require('./web_sockets'),
@@ -42,7 +45,7 @@ function Web(database, settings, testcallback) {
         tools = {};
 
     // add this to the VERY top of the first file loaded in your app
-    if (process.env.OPBEAT_TOKEN != '') {
+    if (process.env.OPBEAT_TOKEN) {
         opbeat.start({
             appId: 'defd81afde',
             organizationId: 'ff8890035a8446b1b3e2b07416234eee',
@@ -52,6 +55,10 @@ function Web(database, settings, testcallback) {
 
     // setup express
     Settings(settings, express);
+    express.use(Favicon(Path.join(__dirname, '../../config/public', 'favicon.ico')));
+    express.use(BodyParser.json());
+    express.use(BodyParser.urlencoded({ extended: false }));
+    express.use(CookieParser());
     express.use(require('node-sass-middleware')({
         src: Path.join(__dirname, '../../config/public'),
         dest: Path.join(__dirname, '../../config/public'),
@@ -78,7 +85,7 @@ function Web(database, settings, testcallback) {
     tools = Tools(database, settings, HTTP, express);
 
     // Add the Opbeat middleware after your regular middleware
-    if (process.env.OPBEAT_TOKEN != '') {
+    if (process.env.OPBEAT_TOKEN) {
         express.use(opbeat.middleware.express());
     }
 

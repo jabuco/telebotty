@@ -53,13 +53,14 @@ var path = require('path'),
                 autoConnect: false,
                 autoRejoin: true,
                 channels: [],
+                certExpired: false,
                 debug: false,
                 encoding: 'UTF-8',
                 port: process.env.IRC_PORT || 6667,
                 realName: 'telebotty ircbot',
                 sasl: false,
                 secure: false,
-                selfSigned: true,
+                selfSigned: false,
                 stripColors: true,
                 retryCount: 3,
                 retryDelay: 2000,
@@ -137,13 +138,15 @@ try {
             console.log('[Settings]', 'loading test-settings');
         }
         require('./test')(Settings);
+    } else if (require('fs').existsSync(path.join(__dirname, '../../config/app/settings/secrets.js'))) {
+        require(path.join(__dirname, '../../config/app/settings/secrets.js'))(Settings);
     } else {
         require('./secrets')(Settings);
     }
     Settings.secrets = true;
 } catch (error) {
     if ((process.env.DEBUG + '').toLowerCase() == 'true' || (process.env.TEST + '').toLowerCase() == 'true') {
-        console.warn('/app/app/secrets.js is either missing or courrupt. please run Tests.');
+        console.warn('secrets.js is either missing or courrupt. please run Tests.');
         console.log(error.message);
     }
 }
@@ -157,13 +160,21 @@ try {
  **/
 try {
     require('./globals')(Settings.globals);
+    if (require('fs').existsSync(path.join(__dirname, '../../config/app/settings/globals.js'))) {
+        require(path.join(__dirname, '../../config/app/settings/globals.js'))(Settings.globals);
+    }
 } catch (error) {
     if ((process.env.DEBUG + '').toLowerCase() == 'true') {
-        console.warn('/app/app/globals.js is either missing or courrupt. please run Tests.');
+        console.warn('globals.js is either missing or courrupt. please run Tests.');
+        console.log(error.message);
     }
 }
 
 try {
-    require(path.join(__dirname, '../../', '/config/app/settings'))(Settings);
+    require(path.join(__dirname, '../../config/app/settings/settings.js'))(Settings);
 } catch (error) {}
+
+/**
+ * Settings are ready now. exprt them.
+ */
 module.exports = Settings;

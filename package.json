@@ -1,6 +1,6 @@
 {
     "name": "telebotty",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "A universal framework utilising Express, Mongoose, Telegram, Irc and many more",
     "main": "server.js",
     "scripts": {
