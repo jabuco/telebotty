@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.12.0
+version: v1.13.5
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -22,3 +22,38 @@ patch:
         patched: '2018-06-22T08:37:05.217Z'
     - node-sass-middleware > node-sass > node-gyp > request > hawk > cryptiles > boom > hoek:
         patched: '2018-06-22T08:37:05.217Z'
+  SNYK-JS-LODASH-450202:
+    - mongoose > async > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - tgfancy > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - node-sass-middleware > node-sass > sass-graph > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - hbs > handlebars > async > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - node-sass-middleware > node-sass > gaze > globule > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
+    - tgfancy > node-telegram-bot-api > request-promise > request-promise-core > lodash:
+        patched: '2019-07-05T21:07:28.979Z'
