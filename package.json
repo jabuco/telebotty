@@ -31,7 +31,7 @@
     "opbeat": "^4.13.0",
     "serve-favicon": "^2.3.2",
     "socket.io": "^2.0.0",
-    "tgfancy": "^0.11.0",
+    "tgfancy": "^0.13.0",
     "snyk": "^1.192.3"
   },
   "devDependencies": {
