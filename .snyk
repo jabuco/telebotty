@@ -57,3 +57,8 @@ patch:
         patched: '2019-07-05T21:07:28.979Z'
     - tgfancy > node-telegram-bot-api > request-promise > request-promise-core > lodash:
         patched: '2019-07-05T21:07:28.979Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-05T08:23:16.280Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-05T08:23:16.280Z'
